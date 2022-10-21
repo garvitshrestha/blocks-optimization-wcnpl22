@@ -10,9 +10,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function blocks_optimization_wcnpl22_dynamic_template_cb( $attributes, $contents ) {
+function blocks_optimization_wcnpl22_dynamic_template_cb( $attributes ) {
 	ob_start();
-	include __DIR__ . '/templates/template-dynamic.php';
+	?>
+	<div <?php echo get_block_wrapper_attributes(); ?>>
+
+		<div>
+			<h1><?php echo esc_html( $attributes['heading'] ); ?></h1>
+		</div>
+
+	</div>
+	<?php
 	return ob_get_clean();
 }
 
