@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,10 +29,25 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes: { heading, content }, setAttributes }) {
+
+	const handleRichTextChange = (key, value) => {
+		setAttributes({ [key]: value });
+	}
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Example Dynamic – hello from the editor!', 'example-dynamic' ) }
-		</p>
+		<div {...useBlockProps()}>
+			<RichText
+				tagName='h1'
+				onChange={(val) => handleRichTextChange('heading', val)}
+				value={heading}
+			/>
+
+			<RichText
+				tagName='p'
+				onChange={(val) => handleRichTextChange('content', val)}
+				value={content}
+			/>
+		</div>
 	);
 }

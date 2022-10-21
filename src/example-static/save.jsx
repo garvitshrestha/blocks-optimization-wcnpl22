@@ -15,10 +15,14 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export default function save({attributes: {heading, content} }) {
+
+	const blockProps = useBlockProps.save();
+
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Example Static – hello from the saved content!' }
-		</p>
+		<div {...blockProps}>
+			<h1>{heading}</h1>
+			<p>{content}</p>
+		</div>
 	);
 }

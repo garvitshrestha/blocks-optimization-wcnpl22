@@ -10,6 +10,16 @@
 		"html": false
 	},
 	"textdomain": "example-static",
+	"attributes": {
+		"heading": {
+			"type":"string",
+			"default":"This is heading"
+		},
+		"content": {
+			"type":"string",
+			"default":"Type your content here"
+		}
+	},
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"
