@@ -3,8 +3,8 @@ import { withSelect } from "@wordpress/data";
 import { __ } from '@wordpress/i18n';
 import './editor.scss';
 
+import { Placeholder, Spinner } from "@wordpress/components";
 import Controls from './Controls';
-import { Placeholder, __experimentalGrid as Grid, Spinner } from "@wordpress/components";
 
 
 /**
@@ -56,7 +56,7 @@ const Edit = ({ attributes, setAttributes, allPosts, selectedPosts }) => {
 
 const PostLists = ({ selectedPosts }) => {
 	return (
-		<Grid columns={2}>
+		<div className='bo-wcnpl22-grid'>
 			{
 				!!selectedPosts.length && selectedPosts.map((selectedPost) => (
 					<div key={selectedPost.id}>
@@ -65,7 +65,7 @@ const PostLists = ({ selectedPosts }) => {
 					</div>
 				))
 			}
-		</Grid>
+		</div>
 	)
 }
 

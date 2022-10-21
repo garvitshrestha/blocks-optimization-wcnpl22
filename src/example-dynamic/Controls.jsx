@@ -16,6 +16,15 @@ const generateDropDownOptions = (data = []) => {
 
 export default ({ attributes, setAttributes, allPosts }) => {
 
+	/**
+	 * We are doing memoization here so that `generateDropDownOptions` function
+	 * do not re-run in every re-render.
+	 * Instead, it will only re-run when the dependency of `useMemo` changes.
+	 *
+	 * This helps in the scenarios when we have to loop through big amount of data.
+	 * In such cases, the performance of block decreases as the function gets called
+	 * and does same calculation, each time the components re-renders.
+	 */
 	const options = useMemo(() => generateDropDownOptions(allPosts), [allPosts?.length]);
 
 	return (

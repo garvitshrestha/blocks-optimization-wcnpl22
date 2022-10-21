@@ -10,3 +10,9 @@
 	color: #fff;
 	padding: 2px;
 }
+
+.bo-wcnpl22-grid {
+	display: grid;
+	gap: calc(12px);
+	grid-template-columns: repeat(2, 1fr);
+}

@@ -19,7 +19,7 @@ function blocks_optimization_wcnpl22_dynamic_template_cb( $attributes ) {
 			<h1><?php echo esc_html( $attributes['heading'] ); ?></h1>
 
 			<div>
-				<div style="display:grid; gap: calc(12px); grid-template-columns: repeat(2, 1fr)">
+				<div class="bo-wcnpl22-grid">
 					<?php
 					$query = new WP_Query(
 						array(
