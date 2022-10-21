@@ -17,6 +17,37 @@ function blocks_optimization_wcnpl22_dynamic_template_cb( $attributes ) {
 
 		<div>
 			<h1><?php echo esc_html( $attributes['heading'] ); ?></h1>
+
+			<div>
+				<div style="display:grid; gap: calc(12px); grid-template-columns: repeat(2, 1fr)">
+					<?php
+					$query = new WP_Query(
+						array(
+							'ignore_sticky_posts' => true,
+							'post__in'            => isset( $attributes['post_ids'] ) ? $attributes['post_ids'] : array()
+						)
+					);
+
+					if ( $query->have_posts() ) {
+						while ( $query->have_posts() ) {
+							$query->the_post();
+
+							?>
+							<div id="grid-item-<?php the_ID(); ?>">
+								<?php
+									the_title( '<h4>', '</h4>' );
+									the_excerpt();
+								?>
+							</div>
+							<?php
+						}
+					}
+
+					wp_reset_postdata();
+
+					?>
+				</div>
+			</div>
 		</div>
 
 	</div>
