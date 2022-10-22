@@ -9,7 +9,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save({ attributes: { heading, content } }) {
+export default function Save({ attributes: { heading, content } }) {
 
 	const blockProps = useBlockProps.save();
 

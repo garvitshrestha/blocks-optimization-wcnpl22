@@ -17,18 +17,25 @@ import './style.scss';
 /**
  * Internal dependencies
  */
-import Edit from './edit';
+import Edit from './Edit';
 
 import metadata from './block.json';
+import Save from './Save';
 
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( metadata.name, {
+registerBlockType(metadata.name, {
 	/**
-	 * @see ./edit.js
+	 * @see ./Edit.jsx
 	 */
 	edit: Edit,
-} );
+
+	/**
+	 * @see ./Save.jsx
+	 */
+	save: Save,
+
+});

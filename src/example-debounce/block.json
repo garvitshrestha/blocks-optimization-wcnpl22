@@ -1,25 +1,21 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "blocks-optimization-wcnpl22/example-static",
+	"name": "blocks-optimization-wcnpl22/example-debounce",
 	"version": "0.1.0",
-	"title": "Example Static",
+	"title": "Example Debounce",
 	"category": "widgets",
 	"icon": "smiley",
 	"supports": {
 		"html": false
 	},
-	"textdomain": "blocks-optimization-wcnpl22",
 	"attributes": {
 		"heading": {
-			"type":"string",
-			"default":"This is heading"
-		},
-		"content": {
-			"type":"string",
-			"default":"Type your content here"
+			"type": "string",
+			"default": "This is a Heading"
 		}
 	},
+	"textdomain": "blocks-optimization-wcnpl22",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"
