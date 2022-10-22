@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "blocks-optimization-wcnpl22/example-error-boundaries",
+	"version": "0.1.0",
+	"title": "Example Error Boundaries",
+	"category": "widgets",
+	"icon": "smiley",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "blocks-optimization-wcnpl22",
+	"attributes": {
+		"enable": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}

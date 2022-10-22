@@ -58,11 +58,12 @@ function blocks_optimization_wcnpl22_dynamic_template_cb( $attributes ) {
 function blocks_optimization_wcnpl22_blocks_init() {
 
 	$blocks = array(
-		'example-debounce' => array(),
 		'example-dynamic' => array(
 			'render_callback' => 'blocks_optimization_wcnpl22_dynamic_template_cb'
 		),
-		'example-static' => array(),
+		'example-static'           => array(),
+		'example-debounce'         => array(),
+		'example-error-boundaries' => array(),
 	);
 
 	if ( is_array( $blocks ) && ! empty( $blocks ) ) {

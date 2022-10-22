@@ -5,11 +5,11 @@ import { useDebounce } from './hooks';
 
 export default ({ attributes: { heading }, setAttributes }) => {
 
-	const handlerOnDebounceChange = (value) => {
+	const debounceCallback = (value) => {
 		setAttributes({ heading: value });
 	}
 
-	const debounce = useDebounce(handlerOnDebounceChange, 1000);
+	const debounce = useDebounce(debounceCallback, 1000);
 
 	return (
 		<InspectorControls>
